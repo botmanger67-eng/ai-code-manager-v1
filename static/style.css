@@ -1,0 +1,28 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', sans-serif; background:#0a0a1a; color:#e0e0e0; display:flex; min-height:100vh; }
+.sidebar { width:260px; background:rgba(255,255,255,0.03); border-right:1px solid rgba(255,255,255,0.1); padding:20px; flex-shrink:0; }
+.sidebar-header { margin-bottom:20px; }
+.sidebar-header h2 { font-size:20px; margin-bottom:10px; }
+.sidebar-header .btn { width:100%; }
+.session-list { max-height:calc(100vh - 150px); overflow-y:auto; }
+.session-item { padding:10px; margin:5px 0; background:rgba(255,255,255,0.03); border-radius:8px; cursor:pointer; transition:0.2s; }
+.session-item:hover { background:rgba(102,126,234,0.1); }
+.session-item.active { background:rgba(102,126,234,0.15); border-left:3px solid #667eea; }
+.session-name { font-weight:600; font-size:14px; }
+.session-status { font-size:11px; color:#888; }
+.main { flex:1; padding:30px; overflow-y:auto; }
+.header { margin-bottom:30px; }
+.card { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:25px; margin-bottom:20px; }
+.hidden { display:none !important; }
+textarea, input[type="text"] { width:100%; padding:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:white; font-family:inherit; resize:vertical; }
+.btn { padding:10px 20px; border:none; border-radius:8px; font-weight:600; cursor:pointer; transition:0.2s; display:inline-block; text-align:center; }
+.btn-primary { background:linear-gradient(135deg, #667eea, #764ba2); color:white; }
+.btn-success { background:linear-gradient(135deg, #11998e, #38ef7d); color:white; }
+.btn-outline { background:transparent; border:1px solid white; color:white; }
+.btn-github { background:#24292e; color:white; }
+.progress-bar { height:8px; background:rgba(255,255,255,0.1); border-radius:4px; margin:10px 0; }
+.progress-fill { height:100%; background:#667eea; border-radius:4px; width:0%; transition:width 0.5s; }
+.file-item { display:flex; align-items:center; padding:8px; margin:5px 0; background:rgba(255,255,255,0.03); border-radius:6px; }
+.file-item.completed { border-left:3px solid #38ef7d; }
+.spinner { width:16px; height:16px; border:2px solid rgba(255,255,255,0.2); border-top-color:#667eea; border-radius:50%; animation:spin 0.8s linear infinite; margin-right:8px; }
+@keyframes spin { to { transform:rotate(360deg); } }

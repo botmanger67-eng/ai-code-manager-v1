@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>🚀 AI Code Manager</h2>
+            <button id="newProjectBtn" class="btn btn-primary">+ New Project</button>
+        </div>
+        <div class="session-list" id="sessionList">
+            <!-- Sessions loaded here -->
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>AI Code Manager Studio</h1>
+            <p>Describe, Plan, Generate, Push</p>
+        </div>
+
+        <div id="sectionDescribe" class="card">
+            <h2>Describe Your Project</h2>
+            <textarea id="projectDescription" placeholder="Build a REST API for a todo app..."></textarea>
+            <button class="btn btn-primary" onclick="analyzeProject()">Analyze & Create Plan</button>
+            <div id="analyzeLoading" class="loading hidden"></div>
+        </div>
+
+        <div id="sectionPlan" class="card hidden">
+            <h2>📋 Project Plan</h2>
+            <div id="planContent"></div>
+            <div class="buttons">
+                <button class="btn btn-success" onclick="confirmAndGenerate()">Generate Code</button>
+                <button class="btn btn-outline" onclick="resetToDescribe()">Start Over</button>
+            </div>
+        </div>
+
+        <div id="sectionProgress" class="card hidden">
+            <h2>⚡ Generating Code</h2>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <p id="progressText">0%</p>
+            <div id="fileList"></div>
+        </div>
+
+        <div id="sectionPush" class="card hidden">
+            <h2>📤 Push to GitHub</h2>
+            <p id="completionMessage"></p>
+            <input id="repoName" placeholder="repository-name">
+            <button id="pushBtn" class="btn btn-github" onclick="pushToGitHub()">Push to GitHub</button>
+            <div id="pushStatus"></div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
